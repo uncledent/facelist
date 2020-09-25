@@ -36,8 +36,7 @@ const parseResponse = async <T>(response: Response): Promise<T> => {
   try {
     return await response.json();
   } catch (error) {
-    console.error(error);
-    throw new Error('JSON parsing error');
+    throw { message: 'JSON parsing error' };
   }
 };
 

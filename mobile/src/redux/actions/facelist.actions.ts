@@ -5,7 +5,7 @@ import { FACELIST } from '../redux-types';
 export function fetchFaceList() {
   return (dispatch: Function) => {
     dispatch({ type: FACELIST.REQUEST });
-    api
+    return api
       .get<FaceItem[]>('')
       .then((res: FaceItem[]) => {
         dispatch({
@@ -16,25 +16,16 @@ export function fetchFaceList() {
       .catch((error) => {
         dispatch({
           type: FACELIST.FAILURE,
-          payload: getErrorMessage(error),
+          payload: { errorMessage: getErrorMessage(error) },
         });
       });
   };
 }
 
 function getErrorMessage(error: any) {
-  if (typeof error === 'string') {
-    return error;
+  if (typeof error?.message === 'string') {
+    return error.message;
   }
-  if (error && error.statusCode) {
-    switch (error.statusCode) {
-      case 400:
-        return 'Bad request';
-      case 403:
-        return 'Not allowed';
-      default:
-        return 'Something went wrong';
-    }
-  }
+  // as this is a test task, I wont write the whole error handler
   return 'Something went wrong';
 }

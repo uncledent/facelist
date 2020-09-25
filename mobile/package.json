@@ -6,30 +6,55 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "test": "jest"
+    "test": "jest --collectCoverage "
   },
   "dependencies": {
     "expo": "~39.0.2",
     "expo-status-bar": "~1.0.2",
     "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "react-dom": "^16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.2.tar.gz",
-    "react-native-web": "~0.13.12",
     "react-redux": "^7.2.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "@testing-library/react": "^11.0.4",
     "@types/react": "~16.9.35",
     "@types/react-dom": "~16.9.8",
     "@types/react-native": "~0.63.2",
     "@types/react-redux": "^7.1.9",
+    "@types/redux-mock-store": "^1.0.2",
+    "fetch-mock": "^9.10.7",
     "jest": "^26.4.2",
-    "react-native-web": "~0.13.7",
+    "react-native-testing-library": "^6.0.0",
+    "react-test-renderer": "^16.13.1",
+    "redux-mock-store": "^1.5.4",
+    "ts-jest": "^26.4.0",
     "typescript": "~3.9.5"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts",
+      "!src/**/*.interface.ts",
+      "!src/redux/store.ts",
+      "!src/index.tsx",
+      "!src/lib/test-utils.tsx"
+    ],
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/?!(react-native)"
+    ]
   },
   "private": true
 }

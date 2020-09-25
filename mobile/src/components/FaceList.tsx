@@ -6,7 +6,7 @@ import { colors } from '../config/style-units';
 import { useShowErrorNotification } from '../hooks/use-show-error-notification.hook';
 import { FaceItem } from '../interfaces/faceItem.interface';
 import { fetchFaceList } from '../redux/actions/facelist.actions';
-import { RootState } from '../redux/root.state';
+import { RootState } from '../interfaces/root-state.interface';
 import { FaceListItem } from './FaceListItem';
 
 export const FaceList = () => {
@@ -35,6 +35,7 @@ export const FaceList = () => {
 
   return (
     <FlatList
+      testID='faceFlatList'
       contentContainerStyle={styles.contentContainer}
       data={data}
       keyExtractor={(item) => item.id}

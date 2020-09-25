@@ -13,7 +13,10 @@ export function createReducer<T>(
     [key: string]: handlerFn<T>;
   }
 ) {
-  return function reducer(state: T = initialState, action: { type?: string }) {
+  return function reducer(
+    state: T = initialState,
+    action: { type?: string; payload?: any }
+  ) {
     if (handlers.hasOwnProperty(action!.type!)) {
       return handlers[action!.type!](state, action);
     } else {

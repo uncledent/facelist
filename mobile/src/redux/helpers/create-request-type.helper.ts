@@ -17,8 +17,8 @@ export type DefaultActionTypes = {
  */
 export function createRequestTypes(
   base: string,
-  types: any = defaultTypes
-): DefaultActionTypes {
+  types: string[] = defaultTypes
+): DefaultActionTypes & { [id: string]: string } {
   const res: any = {};
   types.forEach((type: string) => (res[type] = `${base}_${type}`));
   return res;
