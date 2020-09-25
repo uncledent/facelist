@@ -1,4 +1,4 @@
-# This is a simple boilerplate mobile application built with React Native, TypeScript and Redux on the client side and NestJS (NodeJS Framework) on the server side.
+# This is a simple boilerplate mobile application built with React Native (Expo), TypeScript and Redux on the client side and NestJS (NodeJS Framework) on the server side.
 
 Server has only one endpoint to return a list of entities, that have the following structure:
 
@@ -13,6 +13,8 @@ Server has only one endpoint to return a list of entities, that have the followi
 Mobile app fetches data and renders a virtualized list of users with name and avatar.
 
 ## Mobile application
+
+![screenshot](https://res.cloudinary.com/dfzdapo2m/image/upload/c_scale,w_380/v1601021771/temp/Simulator_Screen_Shot_-_iPhone_11_-_2020-09-25_at_10.13.38.png)
 
 Run locally:
 
