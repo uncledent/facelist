@@ -35,6 +35,8 @@ yarn // if have not run before
 yarn test
 ```
 
+![screenshottests](https://res.cloudinary.com/dfzdapo2m/image/upload/v1601022089/temp/Bildschirmfoto_2020-09-25_um_10.21.21.png)
+
 ## Backend
 
 ### Run locally:
