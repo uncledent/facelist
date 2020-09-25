@@ -14,7 +14,13 @@ Mobile app fetches data and renders a virtualized list of users with name and av
 
 ## Mobile application
 
+### iOS
+
 ![screenshot](https://res.cloudinary.com/dfzdapo2m/image/upload/c_scale,w_380/v1601021771/temp/Simulator_Screen_Shot_-_iPhone_11_-_2020-09-25_at_10.13.38.png)
+
+### Android
+
+![screenshot](https://res.cloudinary.com/dfzdapo2m/image/upload/c_scale,w_480/v1601023047/temp/Screenshot_1601023037.png)
 
 ### Run locally:
 
